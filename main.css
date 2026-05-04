@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Eater", serif;
+    text-align: center;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+    gap: 20px;
+
+    padding: 40px 20px;
+}
+
+/* TITLE */
+h1 {
+    margin-bottom: 10px;
+}
+
+/* SCORE */
+.score {
+    display: flex;
+    gap: 60px;
+    font-size: 22px;
+}
+
+.score p {
+    padding: 12px 25px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* SCORE COLORS */
+#playerScore {
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#computerScore {
+    color: #ff3b3b;
+    text-shadow: 0 0 10px #ff3b3b;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* RESULT */
+#result {
+    font-size: 26px;
+    min-height: 40px;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* BUTTON WRAPPER */
+.buttons {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* BUTTONS */
+.buttons button {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(145deg, #111, #1c1c1c);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 18px;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+.buttons button:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: #00ffcc;
+    box-shadow: 0 0 20px rgba(0,255,200,0.2);
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+}
+
+/* ICONS */
+.choice i {
+    font-size: 32px;
+    color: #00d9ff;
+    text-shadow: 0 0 10px rgba(0,217,255,0.5);
+}
+
+/* RESTART */
+#restart {
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#restart:hover {
+    background: #222;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+/* FLASH EFFECTS */
+.flash-win {
+    animation: flashGreen 0.3s;
+}
+
+.flash-lose {
+    animation: flashRed 0.3s;
+}
+
+.flash-draw {
+    animation: flashWhite 0.3s;
+}
+
+/* WIN */
+@keyframes flashGreen {
+    0% { background: #111; }
+    50% { background: #2ecc71; }
+    100% { background: #111; }
+}
+
+/* LOSE */
+@keyframes flashRed {
+    0% { background: #111; }
+    50% { background: #e74c3c; }
+    100% { background: #111; }
+}
+
+/* DRAW */
+@keyframes flashWhite {
+    0% { background: #111; color: white; }
+    50% { background: #ffffff; color: black; }
+    100% { background: #111; color: white; }
+}
