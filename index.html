@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RPS Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <meta name="description" content="Rock Paper Scissors against the computer in the browser. First to 3 points wins.">
+    <meta property="og:title" content="Rock Paper Scissors">
+    <meta property="og:description" content="Play against the computer. First to 3 points wins.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23111'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%2300d9ff'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eater&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -18,15 +24,17 @@
     <p>Computer: <span id="computerScore">0</span></p>
 </div>
 
-<h2 id="result">Choose your move</h2>
+<p class="rules">First to 3 points wins</p>
+
+<h2 id="result" aria-live="polite">Choose your move</h2>
 
 <div class="buttons">
-    <button class="choice" data-choice="rock"> <i class="fa-solid fa-hand-back-fist"></i></button>
-    <button class="choice" data-choice="paper"><i class="fa-solid fa-hand"></i></button>
-    <button class="choice" data-choice="scissors"><i class="fa-solid fa-hand-scissors"></i></button>
+    <button class="choice" data-choice="rock" aria-label="Rock" title="Rock"><i aria-hidden="true" class="fa-solid fa-hand-back-fist"></i></button>
+    <button class="choice" data-choice="paper" aria-label="Paper" title="Paper"><i aria-hidden="true" class="fa-solid fa-hand"></i></button>
+    <button class="choice" data-choice="scissors" aria-label="Scissors" title="Scissors"><i aria-hidden="true" class="fa-solid fa-hand-scissors"></i></button>
 </div>
 
-<button id="restart"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+<button id="restart" aria-label="Restart game" title="Restart game"><i aria-hidden="true" class="fa-solid fa-arrow-rotate-right"></i></button>
 
 <script src="rps.js"></script>
 </body>

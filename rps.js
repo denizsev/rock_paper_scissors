@@ -37,7 +37,7 @@ function flashEffect(type) {
 function updateUI(player, computer, result) {
 
     if (result === "draw") {
-        resultEl.innerHTML = `Draw!<br<You: ${player} - Computer: ${computer}`;
+        resultEl.innerHTML = `Draw!<br>You both chose ${player}`;
         flashEffect("draw");
         return;
     }
@@ -58,12 +58,16 @@ function updateUI(player, computer, result) {
     if (playerScore === 3 || computerScore === 3) {
         gameOver = true;
 
-        if (playerScore === 3) {
-            resultEl.textContent = "🏆 You won the game!";
-        } else {
-            resultEl.textContent = "💻 Computer won the game!";
-        }
+        const winner = playerScore === 3 ? "🏆 You won the game!" : "💻 Computer won the game!";
+        resultEl.innerHTML = `${resultEl.innerHTML}<br>${winner}`;
+        setButtonsDisabled(true);
     }
+}
+
+function setButtonsDisabled(disabled) {
+    document.querySelectorAll(".choice").forEach(btn => {
+        btn.disabled = disabled;
+    });
 }
 
 function play(choice) {
@@ -75,7 +79,6 @@ function play(choice) {
     updateUI(choice, computerChoice, result);
 }
 
-// ✅ FIX: doğru event binding (data-choice kullanıyoruz)
 document.querySelectorAll(".choice").forEach(btn => {
     btn.addEventListener("click", () => {
         const choice = btn.dataset.choice;
@@ -92,4 +95,5 @@ restartBtn.addEventListener("click", () => {
     playerScoreEl.textContent = "0";
     computerScoreEl.textContent = "0";
     resultEl.textContent = "Choose your move";
+    setButtonsDisabled(false);
 });

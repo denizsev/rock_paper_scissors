@@ -158,3 +158,32 @@ h1 {
 
 
 /*https://denizsev.github.io/rock_paper_scissors/*/
+/* RULES */
+.rules {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #9a9a9a;
+}
+
+.buttons button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.buttons button:focus-visible,
+#restart:focus-visible {
+    outline: 3px solid #00d9ff;
+    outline-offset: 3px;
+}
+
+/* PHONES */
+@media (max-width: 480px) {
+    body { padding: 24px 12px; }
+    h1 { font-size: 26px; }
+    .score { gap: 12px; font-size: 16px; }
+    .score p { padding: 10px 14px; }
+    #result { font-size: 20px; }
+    .buttons { gap: 14px; }
+    .buttons button { width: 76px; height: 76px; }
+}
